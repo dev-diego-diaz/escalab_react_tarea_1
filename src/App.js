@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import {BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
@@ -14,23 +14,27 @@ import Bluray from './pages/bluray/bluray.component';
 import Contacto from './pages/contacto/contacto.component';
 import Vinilos from './pages/vinilos/vinilos.component';
 
+const App = ({nombreTienda}) => {
 
 
-const App = () => (
+  const [footer, setFooter] = useState('Diego Díaz');
+
     
-  <Fragment>
-      <BrowserRouter>
-      <Header/>
-          <Switch>
-            <Route exact path="/" activeClassName="active" component={HomePage} />
-            <Route path="/bluray" component={Bluray} />
-            <Route path="/contacto" component={Contacto} />
-            <Route path="/vinilo" component={Vinilos} />
-          </Switch>
-      </BrowserRouter>
-    <Footer />
-  </Fragment>
+  return(
+    <Fragment>
+        <BrowserRouter>
+        <Header nombreTopMenu={nombreTienda}/>
+            <Switch>
+              <Route exact path="/" activeClassName="active" component={HomePage} />
+              <Route path="/bluray" component={Bluray} />
+              <Route path="/contacto" component={Contacto} />
+              <Route path="/vinilo" component={Vinilos} />
+            </Switch>
+        </BrowserRouter>
+      <Footer nombre={footer} />
+    </Fragment>
+  );
 
-);
+};
 
 export default App;

@@ -7,15 +7,20 @@ import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 
 import './Header.styles.css';
 
-const Header = () => {
+const Header = ({nombreTopMenu}) => {
     return(
         <AppBar position="sticky">
 
             
+            
             <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center">
+
+                <p>{nombreTopMenu}</p>
+
                 <HeadsetMicIcon />
 
                 <Toolbar>
+
                     <ul className="menuPrincipal">
                         <li>
                             <Link to="/">Inicio</Link>
