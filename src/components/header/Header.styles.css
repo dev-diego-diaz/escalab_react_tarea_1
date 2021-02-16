@@ -1,0 +1,19 @@
+.menuPrincipal {
+    list-style-type: none;
+    list-style: none;
+}
+
+.menuPrincipal a{
+    text-decoration: none;
+    color: aliceblue;
+    text-transform: uppercase;
+    padding: 0 7px;
+}
+
+.menuPrincipal a:hover{
+    text-decoration: underline;
+}
+
+.menuPrincipal li{
+    display: inline;
+}
